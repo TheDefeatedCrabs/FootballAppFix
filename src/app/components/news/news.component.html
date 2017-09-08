@@ -1,0 +1,14 @@
+<br>
+<app-spinner *ngIf="showSpinner"></app-spinner>
+<div class="row">
+  <div *ngFor="let new of news" class="col-sm-4 newsBox" >
+    <div class="card">
+      <img class="card-img-top img-fluid" src="{{new.newsPicture}}" style="height: 290px" alt="Card image cap">
+      <div class="card-block">
+        <h3 class="card-title" style="height: 120px">{{new.header}}</h3>
+        <p class="card-text " style="height: 200px">{{new.newsText}}</p>
+        <a [routerLink] = "['/news/'+new.$key]" href="" class="btn btn-primary">Прочети повече</a>
+      </div>
+    </div>
+  </div>
+</div>

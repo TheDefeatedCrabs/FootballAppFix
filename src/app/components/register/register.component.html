@@ -1,0 +1,26 @@
+<br>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <div class="card">
+      <div class="card-block">
+        <img class="mx-auto d-block" src="" alt="">
+        <h1 class="text-center">Регистрация</h1>
+        <form (submit)="onSubmit()">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" [(ngModel)]="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" [(ngModel)]="password" name="password" required>
+          </div>
+          <div class="form-group">
+            <label for="displayName">Username</label>
+            <input type="displayName" class="form-control" [(ngModel)]="displayName" name="displayName" required>
+          </div>
+          <input type="submit" class="btn btn-primary btn-block" value="Submit">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
