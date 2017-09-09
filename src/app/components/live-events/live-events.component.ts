@@ -1,6 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { LiveEventsService } from './../../services/live-events.service';
+import { FootballStatesService } from './../../services/football-states.service';
+import { MatchesService } from './../../services/matches.service';
+import { FootballStates } from './../../models/FootballStates';
 import { Match } from './../../models/Match';
+import { Competition } from "../../models/Competition";
 import 'rxjs/add/operator/takeUntil';
 import { Subject } from 'rxjs/Subject';
 
@@ -11,18 +14,31 @@ import { Subject } from 'rxjs/Subject';
 })
 export class LiveEventsComponent implements OnInit, OnDestroy {
   private ngUnsubscribe: Subject<void> = new Subject<void>();
-  matches: Match[];
-  showSpinner = true;
+  competitions: Competition[] = [];
+  footballStates: FootballStates;
 
-  constructor( private liveEventsService: LiveEventsService) { }
+  constructor(private matchesService: MatchesService, private footballStatesService: FootballStatesService) { }
 
   ngOnInit() {
-    this.liveEventsService
+    this.matchesService
       .getAll()
       .takeUntil(this.ngUnsubscribe)
-      .subscribe(m => this.matches = m);
-      console.log(this.matches);
-      this.showSpinner = false;
+      .subscribe((matches: Match[]) => {
+        matches.forEach((match: Match) => {
+          let compIdx = this.competitions.map(c => c.name).indexOf(match.competition.name);
+          if (compIdx !== -1) {
+            this.competitions[compIdx].matches.push(match);
+          } else {
+            this.competitions.push(new Competition(match.competition.name, [match]));
+          }
+        });
+      });
+    this.footballStatesService
+      .get()
+      .takeUntil(this.ngUnsubscribe)
+      .subscribe((fs: FootballStates) => {
+        this.footballStates = fs;
+      });
   }
 
   ngOnDestroy() {

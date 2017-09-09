@@ -28,7 +28,10 @@ import { NewsDetailsComponent } from './components/news/news-details/news-detail
 import { ClientService } from './services/client.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
-import { LiveEventsService } from "./services/live-events.service";
+import { MatchesService } from "./services/matches.service";
+import { FootballStatesService } from "./services/football-states.service";
+// Pipes
+import { CurrentStateFilterPipe } from './components/live-events/shared/current-state-filter.pipe'
 
 
 // FireBase config
@@ -57,7 +60,8 @@ export const firebaseConfig = {
     SpinnerComponent,
     NewsDetailsComponent,
     EditNewsComponent,
-    LiveEventsComponent
+    LiveEventsComponent,
+    CurrentStateFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -73,7 +77,8 @@ export const firebaseConfig = {
     ClientService,
     AuthService,
     AuthGuard,
-    LiveEventsService
+    MatchesService,
+    FootballStatesService
   ],
   bootstrap: [AppComponent]
 })

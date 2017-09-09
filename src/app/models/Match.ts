@@ -1,19 +1,18 @@
 export interface Match {
+    competition: {
+        name: string;
+        flagUrl: string;
+    };
     start: number;
     homeTeam: {
-        name?: string;
-        defaultHomeVenue?: string;
-        dbid: number;
-        isNational: boolean;
-        shortName?: string;
+        shirtUrl: string;
+        name: string;
     };
     homeGoals: number;
     awayTeam: {
-        name?: string;
-        defaultHomeVenue?: string;
-        dbid: number;
-        isNational: boolean;
-        shortName?: string;
+        shirtUrl: string;
+        name: string;
     };
     awayGoals: number;
+    currentState: number;
 }

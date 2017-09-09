@@ -1,10 +1,26 @@
-<br>
-<app-spinner *ngIf="showSpinner"></app-spinner>
-<div class="row">
-  <div *ngFor="let match of matches" class="col-sm-4">
-    <div class="match-block">
-      <p>Start: {{ match.start | date : "medium" }}</p>
-      <p>{{ match.homeTeam.name }} {{ match.homeGoals }}:{{ match.awayGoals }} {{ match.awayTeam.name }}</p>
-    </div>
-  </div>
-</div>
+<table class="table table-striped" *ngFor="let competition of competitions">
+  <thead>
+    <tr>
+      <th>{{ competition.name }}</th>
+    </tr>
+    <tr>
+      <th>Начало</th>
+      <th>Домакин</th>
+      <th>Резултат</th>
+      <th>Гост</th>
+      <th>Статус</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let match of competition.matches">
+      <td>{{ match.start | date : 'd MMM HH:mm' }}</td>
+      <td>{{ match.homeTeam.name }}</td>
+      <td class="result">
+        <img class="img-thumbnail team-shirt float-left" src="{{ match.homeTeam.shirtUrl }}"/>
+        {{ match.homeGoals }}:{{ match.awayGoals }}
+        <img class="img-thumbnail team-shirt float-right" src="{{ match.awayTeam.shirtUrl }}"/></td>
+      <td>{{ match.awayTeam.name }}</td>
+      <td>{{ footballStates[match.currentState].longName | currentStateFilter }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { LiveEventsService } from './live-events.service';
+import { MatchesService } from './matches.service';
 
 describe('LiveEventsService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [LiveEventsService]
+      providers: [MatchesService]
     });
   });
 
-  it('should be created', inject([LiveEventsService], (service: LiveEventsService) => {
+  it('should be created', inject([MatchesService], (service: MatchesService) => {
     expect(service).toBeTruthy();
   }));
 });
