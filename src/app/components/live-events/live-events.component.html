@@ -1,7 +1,7 @@
-<table class="table table-striped table-hover" *ngFor="let competition of competitions">
+<table class="table table-striped table-hover table-bordered table-responsive rounded" *ngFor="let competition of competitions">
   <thead>
     <tr>
-      <th>
+      <th colspan="5" class="bg-primary">
         <img class="img-thumbnail team-shirt float-left" src="{{ competition.flagUrl }}"/>
         <span>{{ competition.name }}</span>
       </th>
