@@ -48,7 +48,6 @@ export class ClientService {
   }
 
   addNews(oneNews: News) {
-    
     oneNews.displayEmail = this.user.email;
     oneNews.postTime = this.getTimeStamp();
     oneNews.displayName = this.userName;
