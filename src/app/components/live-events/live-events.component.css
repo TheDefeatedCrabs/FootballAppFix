@@ -1,7 +1,3 @@
-.match-block {
-    border: 1px solid black;
-}
-
 .team-shirt {
     height: 40px;
     width: 40px;
@@ -9,4 +5,13 @@
 
 .result {
   text-align: center;
+}
+
+th {
+    line-height: 40px;
+    vertical-align: middle;
+}
+
+th > span {
+    padding: 10px;
 }

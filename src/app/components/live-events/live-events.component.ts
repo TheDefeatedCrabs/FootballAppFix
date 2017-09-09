@@ -29,7 +29,7 @@ export class LiveEventsComponent implements OnInit, OnDestroy {
           if (compIdx !== -1) {
             this.competitions[compIdx].matches.push(match);
           } else {
-            this.competitions.push(new Competition(match.competition.name, [match]));
+            this.competitions.push(new Competition(match.competition.name, match.competition.flagUrl, [match]));
           }
         });
       });
