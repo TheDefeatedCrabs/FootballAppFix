@@ -54,11 +54,6 @@ export const firebaseConfig = {
     AddTipComponent,
     CarouselComponent,
     ProfileComponent,
-    NewsComponent,
-    AddNewsComponent,
-    SpinnerComponent,
-    NewsDetailsComponent,
-    EditNewsComponent,
     LiveEventsComponent,
     CurrentStateFilterPipe
   ],
