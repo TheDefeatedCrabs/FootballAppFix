@@ -5,4 +5,6 @@ export interface Tip {
     guest?: string;
     outcome?: string;
     tip?: string;
+    postTime?: string;
+    displayName?: string;
 }

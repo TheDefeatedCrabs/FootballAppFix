@@ -8,6 +8,7 @@ import { NewsModule } from './components/news/news.module';
 import { SharedModule } from './components/shared/shared.module';
 import { AuthModule } from './components/auth/auth.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TipsModule } from './components/tips/tips.module';
 // Angular Fire Module
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -16,8 +17,6 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { AddTipComponent } from './components/tips/add-tip/add-tip.component';
-import { TipsComponent } from './components/tips/tips.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { LiveEventsComponent } from './components/live-events/live-events.component';
@@ -30,6 +29,7 @@ import { MatchesService } from './services/matches.service';
 import { FootballStatesService } from './services/football-states.service';
 // Pipes
 import { CurrentStateFilterPipe } from './components/live-events/shared/current-state-filter.pipe';
+
 
 
 // FireBase config
@@ -47,8 +47,6 @@ export const firebaseConfig = {
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    TipsComponent,
-    AddTipComponent,
     CarouselComponent,
     ProfileComponent,
     LiveEventsComponent,
@@ -65,6 +63,7 @@ export const firebaseConfig = {
     NewsModule,
     SharedModule,
     AuthModule,
+    TipsModule,
     NgbModule.forRoot()
   ],
   providers: [

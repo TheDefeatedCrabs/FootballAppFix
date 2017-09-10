@@ -1,13 +1,20 @@
   <br>
+  <form class="form-inline my-2 my-lg-0 ">
+      <input class="form-control mr-sm-2 mx-auto" type="text" placeholder="Търси в прогнози" name="search" [(ngModel)]="search">
+</form>
+<br>
   <app-spinner *ngIf="showSpinner"></app-spinner>
-  <div *ngFor="let tip of tips" class="card">
+  <div *ngFor="let tip of tips | filterTips:search | sort" class="card" appHover>
       <h3 class="card-header">{{tip.tournament}}</h3>
       <div class="card-block">
             <h4 class="card-title">{{tip.host}} - {{tip.guest}}</h4>
             <p class="card-text">Прогноза: {{tip.tip}}</p>
-            <p class="card-text">Краен изход: {{tip.outcome}}</p>
-            <a href="#" class="btn btn-primary">Прочети повече</a>
+            <p class="card-text xl">
+              <i class="fa fa-futbol-o" aria-hidden="true"></i>  Краен изход: {{tip.outcome}}
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-user" aria-hidden="true"></i>  Автор: {{tip.displayName}}
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-calendar" aria-hidden="true"></i>   Дата: {{tip.postTime}}
+            </p>
       </div>
   </div>
-
+ 
 

@@ -12,8 +12,7 @@ import { LiveEventsComponent } from './components/live-events/live-events.compon
 import { AuthGuard } from './guards/auth.guard';
 const routes: Routes = [
     { path: '', component: HomeComponent },
-    { path: 'tips/all', component: TipsComponent},
-    { path: 'tips/add', component: AddTipComponent, canActivate: [AuthGuard] },
+
     { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
     { path: 'live-events', component: LiveEventsComponent }
 ];
