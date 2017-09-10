@@ -6,7 +6,7 @@
 <br>
 <div class="row">
   <div *ngFor="let new of news | filter:search" class="col-sm-4 newsBox" >
-    <div class="card">
+    <div class="card" appHover>
       <img class="card-img-top img-fluid" src="{{new.newsPicture}}" style="height: 290px" alt="Card image cap">
       <div class="card-block">
         <h3 class="card-title" style="height: 120px">{{new.header}}</h3>

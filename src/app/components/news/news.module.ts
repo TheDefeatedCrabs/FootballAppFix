@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { FilterNewsPipe } from './filter-news.pipe';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -21,7 +22,7 @@ import { FilterNewsPipe } from './filter-news.pipe';
     AddNewsComponent,
     EditNewsComponent,
     NewsDetailsComponent,
-    FilterNewsPipe
+    FilterNewsPipe,
   ],
   exports: [
     NewsComponent
