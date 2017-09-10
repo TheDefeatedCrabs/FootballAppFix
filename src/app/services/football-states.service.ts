@@ -19,6 +19,6 @@ private baseUrl: string = 'https://api.crowdscores.com/v1/football_states';
       })
       .map((res: Response) => {
           return <FootballStates>res.json();
-      });
+    });
   }
 }

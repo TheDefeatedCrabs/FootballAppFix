@@ -2,7 +2,7 @@
   <thead>
     <tr>
       <th colspan="5" class="bg-primary">
-        <img class="img-thumbnail team-shirt float-left" src="{{ competition.flagUrl }}"/>
+        <img class="img-thumbnail icon-size float-left" src="{{ competition.flagUrl }}"/>
         <span>{{ competition.name }}</span>
       </th>
     </tr>
@@ -15,13 +15,13 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let match of competition.matches">
+    <tr *ngFor="let match of competition.matches" (click)="openModal($event)" id="{{ match.dbid }}">
       <td>{{ match.start | date : 'd MMM HH:mm' }}</td>
       <td>{{ match.homeTeam.name }}</td>
       <td class="result">
-        <img class="img-thumbnail team-shirt float-left" src="{{ match.homeTeam.shirtUrl }}"/>
+        <img class="img-thumbnail icon-size float-left" src="{{ match.homeTeam.shirtUrl }}"/>
         {{ match.homeGoals }}:{{ match.awayGoals }}
-        <img class="img-thumbnail team-shirt float-right" src="{{ match.awayTeam.shirtUrl }}"/></td>
+        <img class="img-thumbnail icon-size float-right" src="{{ match.awayTeam.shirtUrl }}"/></td>
       <td>{{ match.awayTeam.name }}</td>
       <td>{{ footballStates[match.currentState].longName | currentStateFilter }}</td>
     </tr>

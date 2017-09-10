@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 import { NewsModule } from './components/news/news.module';
 import { SharedModule } from './components/shared/shared.module';
 import { AuthModule } from './components/auth/auth.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // Angular Fire Module
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -19,12 +20,8 @@ import { AddTipComponent } from './components/tips/add-tip/add-tip.component';
 import { TipsComponent } from './components/tips/tips.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { ProfileComponent } from './components/profile/profile.component';
-
 import { LiveEventsComponent } from './components/live-events/live-events.component';
-
-
-
-
+import { MatchDetailsModalComponent } from './components/live-events/match-details-modal/match-details-modal.component'
 // Services
 import { ClientService } from './services/client.service';
 import { AuthService } from './services/auth.service';
@@ -32,7 +29,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { MatchesService } from "./services/matches.service";
 import { FootballStatesService } from "./services/football-states.service";
 // Pipes
-import { CurrentStateFilterPipe } from './components/live-events/shared/current-state-filter.pipe'
+import { CurrentStateFilterPipe } from './components/live-events/shared/current-state-filter.pipe';
 
 
 // FireBase config
@@ -55,7 +52,8 @@ export const firebaseConfig = {
     CarouselComponent,
     ProfileComponent,
     LiveEventsComponent,
-    CurrentStateFilterPipe
+    MatchDetailsModalComponent,
+    CurrentStateFilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -66,7 +64,8 @@ export const firebaseConfig = {
     HttpModule,
     NewsModule,
     SharedModule,
-    AuthModule
+    AuthModule,
+    NgbModule.forRoot()
   ],
   providers: [
     AngularFireAuth,
@@ -77,6 +76,7 @@ export const firebaseConfig = {
     MatchesService,
     FootballStatesService
   ],
+  entryComponents: [MatchDetailsModalComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

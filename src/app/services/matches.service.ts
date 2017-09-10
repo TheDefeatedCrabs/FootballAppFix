@@ -22,7 +22,21 @@ export class MatchesService {
       })
       .map((res: Response) => {
           return <Match[]>res.json();
-      });
+    });
+  }
+
+  getById(id: string): Observable<Match> {
+    let today: Date = new Date()
+    return this.http.get(
+      this.baseUrl + `/${id}`, 
+      {
+        params: {
+          api_key: ApiConfig.API_KEY
+        }
+      })
+      .map((res: Response) => {
+          return <Match>res.json();
+    });
   }
 
   private getStartOfDay(date: Date): string{
