@@ -40,6 +40,8 @@ export class ClientService {
   }
 
   addTip(tip: Tip) {
+    tip.postTime = this.getTimeStamp();
+    tip.displayName = this.userName;
     this.tips.push(tip);
   }
 
