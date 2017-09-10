@@ -29,6 +29,7 @@ import { MatchesService } from "./services/matches.service";
 import { FootballStatesService } from "./services/football-states.service";
 // Pipes
 import { CurrentStateFilterPipe } from './components/live-events/shared/current-state-filter.pipe';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -52,6 +53,7 @@ export const firebaseConfig = {
     LiveEventsComponent,
     MatchDetailsModalComponent,
     CurrentStateFilterPipe,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
