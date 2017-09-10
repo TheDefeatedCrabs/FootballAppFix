@@ -5,6 +5,7 @@ import { TipsRoutingModule } from './tips-routing.module';
 import { FormsModule } from '@angular/forms';
 import { TipsComponent } from './tips.component';
 import { AddTipComponent } from './add-tip/add-tip.component';
+import { FilterTipsPipe } from './filter-tips.pipe';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { AddTipComponent } from './add-tip/add-tip.component';
   ],
   declarations: [
     TipsComponent,
-    AddTipComponent
+    AddTipComponent,
+    FilterTipsPipe
   ],
   exports: [
     TipsComponent
