@@ -1,4 +1,4 @@
-import { MatchPlayer } from "./MatchPlayer";
+import { MatchPlayer } from './MatchPlayer';
 
 export interface MatchEvent {
     matchTimeString: string;

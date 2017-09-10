@@ -26,20 +26,20 @@ import { MatchDetailsModalComponent } from './components/live-events/match-detai
 import { ClientService } from './services/client.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
-import { MatchesService } from "./services/matches.service";
-import { FootballStatesService } from "./services/football-states.service";
+import { MatchesService } from './services/matches.service';
+import { FootballStatesService } from './services/football-states.service';
 // Pipes
 import { CurrentStateFilterPipe } from './components/live-events/shared/current-state-filter.pipe';
 
 
 // FireBase config
 export const firebaseConfig = {
-    apiKey: "AIzaSyAHvI_4TeAPLEVp1VEme9feDKgh6U1kR80",
-    authDomain: "footballapp-f9fad.firebaseapp.com",
-    databaseURL: "https://footballapp-f9fad.firebaseio.com",
-    storageBucket: "",
-    messagingSenderId: "25155396791"
-}
+    apiKey: 'AIzaSyAHvI_4TeAPLEVp1VEme9feDKgh6U1kR80',
+    authDomain: 'footballapp-f9fad.firebaseapp.com',
+    databaseURL: 'https://footballapp-f9fad.firebaseio.com',
+    storageBucket: '',
+    messagingSenderId: '25155396791'
+};
 
 
 @NgModule({

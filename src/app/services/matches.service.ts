@@ -5,14 +5,17 @@ import { Match } from './../models/Match';
 import { ApiConfig } from '../../../api.config';
 
 @Injectable()
+
 export class MatchesService {
-  private baseUrl: string = 'https://api.crowdscores.com/v1/matches';
+  private baseUrl = 'https://api.crowdscores.com/v1/matches';
+
   constructor(private http: Http) { }
-  
+
   getAll(): Observable<Match[]> {
-    let today: Date = new Date()
+    const today: Date = new Date();
+
     return this.http.get(
-      this.baseUrl, 
+      this.baseUrl,
       {
         params: {
           api_key: ApiConfig.API_KEY,
@@ -26,9 +29,9 @@ export class MatchesService {
   }
 
   getById(id: string): Observable<Match> {
-    let today: Date = new Date()
+    const today: Date = new Date();
     return this.http.get(
-      this.baseUrl + `/${id}`, 
+      this.baseUrl + `/${id}`,
       {
         params: {
           api_key: ApiConfig.API_KEY
@@ -39,11 +42,11 @@ export class MatchesService {
     });
   }
 
-  private getStartOfDay(date: Date): string{
+  private getStartOfDay(date: Date): string {
     return `${date.getUTCFullYear()}-${date.getUTCMonth() + 1}-${date.getUTCDate()}T00:00:00-00:00`;
   }
 
-  private getEndOfDay(date: Date): string{
+  private getEndOfDay(date: Date): string {
     return `${date.getUTCFullYear()}-${date.getUTCMonth() + 1}-${date.getUTCDate()}T23:59:59-00:00`;
   }
 }

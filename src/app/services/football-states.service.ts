@@ -5,13 +5,15 @@ import { FootballStates } from './../models/FootballStates';
 import { ApiConfig } from '../../../api.config';
 
 @Injectable()
+
 export class FootballStatesService {
-private baseUrl: string = 'https://api.crowdscores.com/v1/football_states';
+  private baseUrl = 'https://api.crowdscores.com/v1/football_states';
+
   constructor(private http: Http) { }
-  
+
   get(): Observable<FootballStates> {
     return this.http.get(
-      this.baseUrl, 
+      this.baseUrl,
       {
         params: {
           api_key: ApiConfig.API_KEY

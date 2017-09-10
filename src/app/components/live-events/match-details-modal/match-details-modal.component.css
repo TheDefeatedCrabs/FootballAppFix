@@ -13,3 +13,7 @@
 .modal-header {
   color: #fff;
 }
+
+.table-responsive {
+  overflow: hidden;
+}
