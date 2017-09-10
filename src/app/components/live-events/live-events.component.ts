@@ -32,7 +32,7 @@ export class LiveEventsComponent implements OnInit, OnDestroy {
       .takeUntil(this.ngUnsubscribe)
       .subscribe((matches: Match[]) => {
         matches.forEach((match: Match) => {
-          let compIdx = this.competitions.map(c => c.name).indexOf(match.competition.name);
+          const compIdx = this.competitions.map(c => c.name).indexOf(match.competition.name);
           if (compIdx !== -1) {
             this.competitions[compIdx].matches.push(match);
           } else {
@@ -49,7 +49,7 @@ export class LiveEventsComponent implements OnInit, OnDestroy {
   }
 
   openModal(event): void {
-    let target = event.target || event.srcElement || event.currentTarget;
+    const target = event.target || event.srcElement || event.currentTarget;
     if (target.parentNode.id) {
       this.matchesService
         .getById(target.parentNode.id)
