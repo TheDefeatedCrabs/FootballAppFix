@@ -32,6 +32,7 @@ import { FootballStatesService } from "./services/football-states.service";
 import { CurrentStateFilterPipe } from './components/live-events/shared/current-state-filter.pipe';
 
 
+
 // FireBase config
 export const firebaseConfig = {
     apiKey: "AIzaSyAHvI_4TeAPLEVp1VEme9feDKgh6U1kR80",

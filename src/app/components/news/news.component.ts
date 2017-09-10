@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../services/client.service';
 import { News } from '../../models/News';
-
+import { FilterNewsPipe } from './filter-news.pipe';
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',

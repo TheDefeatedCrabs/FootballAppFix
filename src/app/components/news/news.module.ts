@@ -7,6 +7,7 @@ import { NewsDetailsComponent } from './news-details/news-details.component';
 import { NewsRoutingModule } from './news-routing.module';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
+import { FilterNewsPipe } from './filter-news.pipe';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { SharedModule } from '../shared/shared.module';
     NewsComponent,
     AddNewsComponent,
     EditNewsComponent,
-    NewsDetailsComponent
+    NewsDetailsComponent,
+    FilterNewsPipe
   ],
   exports: [
     NewsComponent
