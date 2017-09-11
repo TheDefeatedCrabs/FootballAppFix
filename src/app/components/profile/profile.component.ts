@@ -13,12 +13,18 @@ export class ProfileComponent implements OnInit {
     email: '',
     status: ''
   };
-  constructor(public clientService: ClientService) { }
+  constructor(public clientService: ClientService) {}
+
+  public paths = [
+    { link: '/news/add', text: 'Добави новина', type: 'btn-primary'},
+    { link: '/tips/add', text: 'Добави прогноза', type: 'btn-success' },
+    { link: '/joks/add', text: 'Добави шега', type: 'btn-secondery' }
+  ];
+
 
   ngOnInit() {
     this.clientService.getUser().subscribe(user => {
       this.user = user;
     });
   }
-
 }

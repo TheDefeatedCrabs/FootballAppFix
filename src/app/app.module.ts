@@ -27,6 +27,8 @@ import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 import { MatchesService } from './services/matches.service';
 import { FootballStatesService } from './services/football-states.service';
+import { FooterComponent } from './components/footer/footer.component';
+import { FunComponent } from './fun/fun.component';
 
 // FireBase config
 export const firebaseConfig = {
@@ -46,7 +48,9 @@ export const firebaseConfig = {
     CarouselComponent,
     ProfileComponent,
     LiveEventsComponent,
-    MatchDetailsModalComponent
+    MatchDetailsModalComponent,
+    FooterComponent,
+    FunComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,7 +72,8 @@ export const firebaseConfig = {
     AuthService,
     AuthGuard,
     MatchesService,
-    FootballStatesService
+    FootballStatesService,
+    FunComponent
   ],
   entryComponents: [MatchDetailsModalComponent],
   bootstrap: [AppComponent]
