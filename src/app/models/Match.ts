@@ -1,5 +1,5 @@
-import { MatchPlayer } from "./MatchPlayer";
-import { MatchEvent } from "./MatchEvent";
+import { MatchPlayer } from './MatchPlayer';
+import { MatchEvent } from './MatchEvent';
 
 export interface Match {
     dbid: number;
@@ -24,5 +24,5 @@ export interface Match {
     matchevents?: MatchEvent[];
     venue?: {
         name?: string;
-    }
+    };
 }

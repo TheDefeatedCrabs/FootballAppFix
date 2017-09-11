@@ -23,3 +23,15 @@ th > span {
   padding: 10px;
   color: #fff;
 }
+
+.blinking {
+  animation: blinker 1s linear infinite;
+  color: #ff0000;
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 5px;
+}
+  
+@keyframes blinker {  
+  50% { opacity: 0; }
+}

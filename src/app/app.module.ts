@@ -20,17 +20,13 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { LiveEventsComponent } from './components/live-events/live-events.component';
-import { MatchDetailsModalComponent } from './components/live-events/match-details-modal/match-details-modal.component'
+import { MatchDetailsModalComponent } from './components/live-events/match-details-modal/match-details-modal.component';
 // Services
 import { ClientService } from './services/client.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 import { MatchesService } from './services/matches.service';
 import { FootballStatesService } from './services/football-states.service';
-// Pipes
-import { CurrentStateFilterPipe } from './components/live-events/shared/current-state-filter.pipe';
-
-
 
 // FireBase config
 export const firebaseConfig = {
@@ -50,8 +46,7 @@ export const firebaseConfig = {
     CarouselComponent,
     ProfileComponent,
     LiveEventsComponent,
-    MatchDetailsModalComponent,
-    CurrentStateFilterPipe,
+    MatchDetailsModalComponent
   ],
   imports: [
     BrowserModule,
