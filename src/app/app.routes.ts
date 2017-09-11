@@ -9,12 +9,13 @@ import { ProfileComponent } from './components/profile/profile.component';
 
 import { LiveEventsComponent } from './components/live-events/live-events.component';
 
+
 import { AuthGuard } from './guards/auth.guard';
 const routes: Routes = [
     { path: '', component: HomeComponent },
 
     { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
-    { path: 'live-events', component: LiveEventsComponent }
+    { path: 'live-events', component: LiveEventsComponent },
 ];
 
 @NgModule({

@@ -12,14 +12,9 @@
               <p class="card-text"><strong>Еmail: </strong> {{user.email}} </p>
             </div>
             <div class="col-md-6 col-sm-6 text-center">
-              <div class="card card-inverse card-info mb-3 text-center">
+              <div *ngFor="let path of paths" class="card card-inverse card-info mb-3 text-center">
                 <div class="card-block">
-                  <button routerLink="/news/add" class="btn btn-primary btn-block btn-md"><i class="fa fa-file-text" aria-hidden="true"></i> Добави нова новина</button>
-                </div>
-              </div>
-              <div class="card card-inverse card-warning mb-3 text-center">
-                <div class="card-block">
-                  <button routerLink="/tips/add" class="btn btn-success btn-block btn-md"><i class="fa fa-file-text-o" aria-hidden="true"></i> Добави нова прогноза</button>
+                  <button routerLink={{path.link}} class="btn {{path.type}} btn-block btn-md"><i class="fa fa-file-text" aria-hidden="true"></i> {{path.text}}</button>
                 </div>
               </div>
             </div>
@@ -28,4 +23,3 @@
       </div>
     </div>
   </div>
-</div>

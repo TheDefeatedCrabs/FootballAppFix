@@ -30,6 +30,7 @@ import { FootballStatesService } from "./services/football-states.service";
 // Pipes
 import { CurrentStateFilterPipe } from './components/live-events/shared/current-state-filter.pipe';
 import { FooterComponent } from './components/footer/footer.component';
+import { FunComponent } from './fun/fun.component';
 
 
 
@@ -54,6 +55,7 @@ export const firebaseConfig = {
     MatchDetailsModalComponent,
     CurrentStateFilterPipe,
     FooterComponent,
+    FunComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,7 +77,8 @@ export const firebaseConfig = {
     AuthService,
     AuthGuard,
     MatchesService,
-    FootballStatesService
+    FootballStatesService,
+    FunComponent
   ],
   entryComponents: [MatchDetailsModalComponent],
   bootstrap: [AppComponent]
