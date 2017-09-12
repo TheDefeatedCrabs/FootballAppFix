@@ -9,7 +9,6 @@ import { SharedModule } from './components/shared/shared.module';
 import { AuthModule } from './components/auth/auth.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TipsModule } from './components/tips/tips.module';
-import { FunModule } from "./components/fun/fun-modul";
 // Angular Fire Module
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -31,6 +30,7 @@ import { FootballStatesService } from "./services/football-states.service";
 // Pipes
 import { CurrentStateFilterPipe } from './components/live-events/shared/current-state-filter.pipe';
 import { FooterComponent } from './components/footer/footer.component';
+import { FunComponent } from './fun/fun.component';
 
 
 
@@ -55,6 +55,7 @@ export const firebaseConfig = {
     MatchDetailsModalComponent,
     CurrentStateFilterPipe,
     FooterComponent,
+    FunComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,7 +68,6 @@ export const firebaseConfig = {
     SharedModule,
     AuthModule,
     TipsModule,
-    FunModule,
     NgbModule.forRoot()
   ],
   providers: [
@@ -78,6 +78,7 @@ export const firebaseConfig = {
     AuthGuard,
     MatchesService,
     FootballStatesService,
+    FunComponent
   ],
   entryComponents: [MatchDetailsModalComponent],
   bootstrap: [AppComponent]

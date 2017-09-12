@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
 
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
-import { AddFunComponent } from '../add-fun/add-fun.component'
+import {Component} from '@angular/core';
+
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-fun',
@@ -11,10 +11,7 @@ import { AddFunComponent } from '../add-fun/add-fun.component'
 export class FunComponent {
   closeResult: string;
 
-  constructor(
-    private modalService: NgbModal,
-    private joks: AddFunComponent
-  ) { }
+  constructor(private modalService: NgbModal) {}
 
   private defaultJoke = `Един футболен отбор играл ужасно и загубил катастрофално мача. След края на мача треньорът ги подхваща в съблекалнята:
 - Всичко знам! Снощи сте се напили като свине! Кой организира запоя?
@@ -24,9 +21,7 @@ export class FunComponent {
 - Добре, ще поставя въпроса по друг начин - кой пръв каза "и сега к'во"?`;
 
   open(content) {
-    // console.log('tuk')
-    // console.log(this.joks.getJoke());
-    this.modalService.open(this.joks.getJoke()).result.then((result) => {
+    this.modalService.open(this.defaultJoke).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
@@ -39,7 +34,7 @@ export class FunComponent {
     } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
       return 'by clicking on a backdrop';
     } else {
-      return `with: ${reason}`;
+      return  `with: ${reason}`;
     }
   }
 }

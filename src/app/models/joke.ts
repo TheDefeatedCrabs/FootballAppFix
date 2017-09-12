@@ -1,4 +1,4 @@
-export interface Joke {
+export class Joke {
     text: string;
-    author?: string;
+    author: string;
 }

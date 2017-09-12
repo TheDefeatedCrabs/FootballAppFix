@@ -3,7 +3,7 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import 'rxjs/add/operator/map';
-import { FunComponent } from '../fun/fun/fun.component';
+import { FunComponent } from './../../fun/fun.component';
 
 
 @Component({
