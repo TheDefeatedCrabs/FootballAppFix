@@ -4,6 +4,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
 import { Tip } from '../models/Tip';
 import { News } from '../models/News';
+import { Joke } from '../models/Joke';
 import * as firebase from 'firebase/app';
 
 @Injectable()
@@ -12,6 +13,8 @@ export class ClientService {
   tip: FirebaseObjectObservable<any>;
   news: FirebaseListObservable<any[]>;
   oneNews: FirebaseObjectObservable<any>;
+  joke: FirebaseObjectObservable<any>;
+  joks: FirebaseObjectObservable<any[]>;
 
   user: firebase.User;
   userName: string;
@@ -22,17 +25,19 @@ export class ClientService {
   ) {
     this.tips = this.db.list('/tips') as FirebaseListObservable<Tip[]>;
     this.news = this.db.list('/news') as FirebaseListObservable<News[]>;
+    // this.joks = this.db.list('/joks') as FirebaseListObservable<Joke[]>;
+
 
 
     this.afAuth.authState.subscribe(auth => {
-          if (auth !== undefined && auth !== null) {
-            this.user = auth;
+      if (auth !== undefined && auth !== null) {
+        this.user = auth;
 
-            this.getUser().subscribe(a => {
-            this.userName = a.displayName;
-            });
-          }
+        this.getUser().subscribe(a => {
+          this.userName = a.displayName;
         });
+      }
+    });
   }
 
   getTips() {
@@ -84,14 +89,12 @@ export class ClientService {
   getTimeStamp() {
     const now = new Date();
     const date = now.getUTCFullYear() + '/' +
-                 (now.getUTCMonth() + 1) + '/' +
-                 now.getUTCDate();
+      (now.getUTCMonth() + 1) + '/' +
+      now.getUTCDate();
     const time = now.getUTCHours() + ':' +
-                 now.getUTCMinutes() + ':' +
-                 now.getUTCSeconds();
+      now.getUTCMinutes() + ':' +
+      now.getUTCSeconds();
 
     return (date + ' ' + time);
   }
-
-  
 }
