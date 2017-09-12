@@ -1,11 +1,11 @@
 <br>
 <form class="form-inline my-2 my-lg-0 ">
-      <input class="form-control mr-sm-2 mx-auto" type="text" placeholder="Търси в новини" name="search" [(ngModel)]="search">
+      <input class="form-control mr-sm-2 mx-auto" type="text" placeholder="Търси в новини" name="search">
 </form>
 <app-spinner *ngIf="showSpinner"></app-spinner>
 <br>
 <div class="row">
-  <div *ngFor="let new of news | filter:search | sort" class="col-sm-4 newsBox" >
+  <div *ngFor="let new of news | sort" cлass="col-sm-4 newsBox" >
     <div class="card" appHover>
       <img class="card-img-top img-fluid" src="{{new.newsPicture}}" style="height: 250px" alt="Card image cap">
       <div class="card-block">
